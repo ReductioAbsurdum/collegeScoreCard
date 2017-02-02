@@ -1,4 +1,4 @@
-var key = "ow4ey8A3VljTDJ9LSW8y4QAxG4V0FdP4J6TWiF6I";
+var key = "";
 var myApp = angular.module('practice', []);
 
 myApp.controller('practiceCtrl', ['$http', function($http) {
