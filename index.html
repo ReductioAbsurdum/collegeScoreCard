@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="UTF-8">
+<html ng-app="practice">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+  </head>
+  <body ng-controller="practiceCtrl as ctrl">
+    <form>
+      <input type="text" ng-model="ctrl.collegeName">
+      <button type="button" ng-click="ctrl.getData()">Get Data!</button>
+    </form>
+    <p ng-if="ctrl.data.length === 0">There are no results</p>
+  </body>
+</html>
