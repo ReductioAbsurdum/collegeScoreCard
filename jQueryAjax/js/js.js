@@ -1,12 +1,15 @@
 $(function(){
-  var key = "ow4ey8A3VljTDJ9LSW8y4QAxG4V0FdP4J6TWiF6I";
+  var key = "";
   $.ajax({
     url: 'https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=' + key + '&school.name=florida%20state%20university',
     method: 'GET',
     dataType: 'json'
-  }).done(function(data){
-    console.log(data);
+  }).done(function(result){
+    console.log(result.results);
+    var data = result.results[0].school.name
+    $('h1').text(data);
   }).fail(function(err){
-    console.log("didn't work, " + err);
+    console.log(err);
+    $('h1').text("ERROR: " + err.responseJSON.errors[0].message);
   });
 })
